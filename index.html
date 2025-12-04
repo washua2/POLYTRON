@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <link href="/css/flowbite.min.css" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>POLYTRON.AI</title>
+  <style>
+    /* @font-face {
+        font-family: "inter";
+        src:"./inter.ttf"
+      }
+
+      *{
+        font-family: inter !important;
+      } */
+  </style>
+</head>
+
+<body>
+  <div id="app"></div>
+  <script type="module" src="/src/main.js"></script>
+  <script src="/js/flowbite.min.js"></script>
+</body>
+<script>
+  const setRem = () => {
+    var screenWidth = window.innerWidth; // 获取窗口宽度
+
+    var scale = screenWidth / 1920; // 计算缩放比例
+    var fontSize = 16 * scale; // 计算字号
+    // if (fontSize <= 10) {
+    //   fontSize = 10
+    // }
+    // fontSize = Math.max(fontSize, 7);
+    //     console.log('screenWidth:', screenWidth);
+    // console.log('scale:', scale);
+    // console.log('fontSize:', fontSize);
+    document.documentElement.style.fontSize = fontSize + 'px'; // 设置html元素的字号
+  }
+
+  setRem()
+
+  window.addEventListener("resize", setRem)
+</script>
+
+</html>
