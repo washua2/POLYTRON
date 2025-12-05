@@ -1,6 +1,6 @@
 <template>
         <div
-            class="w-[113.375rem] pl-[1.25rem] h-[37.5rem] ipad:h-[60rem] fhd:h-[47.8125rem] qhd:h-[47.8125rem] uhd:h-[47.8125rem] overflow-y-auto overflow-hidden scroll">
+            class="min-w-[113.375rem] w-[113.375rem] pl-[1.25rem] h-[37.5rem] ipad:h-[60rem] fhd:h-[47.8125rem] qhd:h-[47.8125rem] uhd:h-[47.8125rem] overflow-y-auto overflow-hidden scroll">
             <div class="box w-[110.25rem]" :style="{
                 gridTemplateColumns: `repeat(4, 1fr)`
             }">

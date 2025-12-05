@@ -45,7 +45,7 @@
         </div>
         <!-- page -->
         <div
-            class="w-[115rem] h-[4rem] px-[1.25rem] border-t-[0.0625rem] border-[#E1E4EA] flex items-center justify-between fixed bottom-0 bg-white">
+            class="w-[115rem] h-[4rem] px-[1.25rem] border-t-[0.0625rem] border-[#E1E4EA] bg-white z-[10] flex items-center justify-between fixed bottom-0 bg-white">
             <div>
                 <div class="justify-start"><span
                         class="text-[#52525B] text-[0.875rem] font-normal font-['Roboto']">Showing</span><span

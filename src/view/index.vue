@@ -1,9 +1,9 @@
 <template>
-  <div class="flex items-start">
+  <div class="flex items-start ">
     <div class="w-[5rem] relative">
       <Menu />
     </div>
-    <div class="flex flex-col flex-wrap items-start justify-start">
+    <div class=" flex flex-col flex-wrap items-start justify-start flex-shrink-0">
       <Navbar />
       <div class="w-full h-[calc(100vh_-_4rem)] ipad:h-[calc(100svh_-_4rem)]">
         <router-view></router-view>

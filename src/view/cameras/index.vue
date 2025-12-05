@@ -28,7 +28,7 @@
             </div>
         </div>
         <!-- page -->
-        <div class="w-[115rem] h-[4rem] px-[1.25rem] border-t-[0.0625rem] border-[#E1E4EA] flex items-center justify-between fixed bottom-0"
+        <div class="w-[115rem] h-[4rem] px-[1.25rem] border-t-[0.0625rem] border-[#E1E4EA] bg-white z-[10] flex items-center justify-between fixed bottom-0"
             v-show="!isLoading">
             <div>
                 <div class="justify-start"><span

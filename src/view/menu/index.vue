@@ -1,5 +1,5 @@
 <template>
-    <div id="menu" class="h-[100vh] ipad:h-[100svh] pb-[1.25rem] bg-white flex flex-wrap flex-col justify-between items-start border-r-[0.0625rem] box-menu
+    <div id="menu" class="h-[100vh] ipad:min-h-[100svh] pb-[1.25rem] bg-white flex flex-wrap flex-col justify-between items-start border-r-[0.0625rem] box-menu
      absolute top-0 left-0 z-[20] transition-[width] duration-300 ease-in-out" :class="isCollapse ? 'w-[16.25rem]' : 'w-[5rem]'
         ">
         <!-- icon -->

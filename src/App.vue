@@ -14,9 +14,6 @@ provide("store", store);
 
 <style>
 html{
-    min-width: 112.5rem;
-    min-height: 56.25rem;
-    overflow: auto;
     /* overflow: hidden; */
 }
 input{

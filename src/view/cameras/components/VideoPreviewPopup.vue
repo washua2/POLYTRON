@@ -10,7 +10,7 @@
     <div
         class="fixed top-0 left-0 w-full h-full bg-[rgba(0,0,0,0.70)] flex items-center justify-center z-[999999] overflow-hidden">
         <div
-            class="w-[45.5625rem] h-[28.5rem] rounded-[0.5rem] bg-white shadow-[0,0.625rem,1.25rem,0,rgba(0, 7, 22, 0.25)]">
+            class="min-w-[45.5625rem] w-[45.5625rem] h-[28.5rem] rounded-[0.5rem] bg-white shadow-[0,0.625rem,1.25rem,0,rgba(0, 7, 22, 0.25)]">
             <!-- header -->
             <div class="px-[1.25rem] py-[1rem] flex items-center justify-between">
                 <div class="justify-start text-zinc-950 text-xl font-medium font-['Roboto'] leading-8">10/24/25,6:35 AM
