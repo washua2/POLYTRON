@@ -14,7 +14,10 @@ provide("store", store);
 
 <style>
 html{
-    overflow: hidden;
+    min-width: 112.5rem;
+    min-height: 56.25rem;
+    overflow: auto;
+    /* overflow: hidden; */
 }
 input{
     box-shadow: none !important;

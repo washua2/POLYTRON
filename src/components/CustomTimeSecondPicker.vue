@@ -7,7 +7,7 @@
         </div>
 
         <!-- 下拉框 -->
-        <div v-if="open" class="absolute z-50 mt-2 bg-white rounded-lg shadow-lg border w-full max-h-48 p-2">
+        <div v-if="open" class="absolute z-50 mt-2 text-[0.875rem] bg-white rounded-lg shadow-lg border w-full max-h-48 p-2">
             <div class="grid grid-cols-3">
                 <!-- 小时选择 -->
                 <div class="flex flex-col items-center overflow-y-auto overflow-x-hidden h-[11.25rem] box-scroll">

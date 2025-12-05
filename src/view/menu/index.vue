@@ -28,12 +28,27 @@
         </div>
         <!-- avatar -->
         <div class="w-full flex items-center relative">
-            <div class="w-[2rem] h-[2rem] rounded-full overflow-hidden bg-[#FFC56E] ml-[1.5rem] ">
+            <div class="w-[2rem] h-[2rem] rounded-full overflow-hidden bg-[#FFC56E] ml-[1.5rem] cursor-pointer" @click="isShowAvatar = !isShowAvatar">
                 <img src="@/assets/images/avatar.png" class="w-full h-full object-cover" alt="">
             </div>
             <div class=" whitespace-nowrap justify-start text-[0.875rem] font-medium font-['Roboto'] transition-all duration-300 ease-in-out overflow-hidden absolute left-[4.375rem]"
                 :class="isCollapse ? 'opacity-100 max-w-full text-[#09090B]' : 'opacity-0 max-w-0 text-white'">Coco
                 Mario</div>
+            <div class="w-[10.3125rem] h-[8.0625rem] bg-white rounded-[0.5rem] border-[0.0625rem] border-[rgba(0,0,0,0.08)]
+             absolute left-[4.0625rem] bottom-0" style="box-shadow: 0 0.0625rem 0.25rem 0 rgba(0, 0, 0, 0.16)" v-show="isShowAvatar">
+                <div class="pl-[1rem] py-[0.75rem] pr-[1.25rem] flex items-center gap-[0.5rem] hover:bg-[#f8f8f8] cursor-pointer">
+                    <SvgIcon width="1rem" height="1rem" icon="avatar-1" />
+                    <div class="justify-end text-[#0D0D12] text-[0.75rem] font-['light'] ">Manage Profile</div>
+                </div>
+                <div class="pl-[1rem] py-[0.75rem] pr-[1.25rem] flex items-center gap-[0.5rem] hover:bg-[#f8f8f8] cursor-pointer">
+                    <SvgIcon width="1rem" height="1rem" icon="avatar-2" />
+                    <div class="justify-end text-[#0D0D12] text-[0.75rem] font-['light']">Get Help</div>
+                </div>
+                <div class="pl-[1rem] py-[0.75rem] pr-[1.25rem] flex items-center gap-[0.5rem] hover:bg-[#f8f8f8] cursor-pointer" @click="router.push('/login')">
+                    <SvgIcon width="1rem" height="1rem" icon="avatar-3" />
+                    <div class="justify-end text-[#0D0D12] text-[0.75rem] font-['light']">Log Out</div>
+                </div>
+            </div>
         </div>
 
     </div>
@@ -46,7 +61,7 @@ const router = useRouter();
 const route = useRoute();
 
 const isCollapse = ref(false);
-
+const isShowAvatar = ref(false);
 const menuList = ref([
     { title: "Camera", icon: "menu-2", iconActive: "menu-2-active", router: "/cameras" },
     { title: "Management", icon: "menu-3", iconActive: "menu-3-active", router: "/cameraManagement" },

@@ -1,38 +1,107 @@
 <template>
-  <div class="relative w-[10rem]">
-    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-      <svg class="w-4 h-4 text-body" fill="none" stroke="currentColor" stroke-width="2"
-        viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round"
-          d="M4 10h16m-8-3V4M7 7V4m10 3V4M5 20h14a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Z" />
-      </svg>
-    </div>
+  <div class="relative inline-flex items-center">
+    <SvgIcon
+      width="1.5rem"
+      height="1.5rem"
+      color="#FFFFFF"
+      icon="video-4"
+      class="cursor-pointer"
+      @click="openPicker"
+    />
 
+    <!-- 隐藏的 input，用来挂 Datepicker -->
     <input
       ref="inputRef"
       type="text"
-      datepicker
-      class="block w-full pl-9 pr-3 py-2.5 bg-neutral-secondary-medium border border-default-medium rounded-base shadow-xs text-sm text-heading focus:ring-brand focus:border-brand"
-      placeholder="Select date"
+      readonly
+      class="absolute opacity-0 pointer-events-none w-[1.5rem] h-[3.375rem]"
     />
   </div>
 </template>
 
 <script setup>
-import { onMounted, ref } from "vue";
+import { ref, onMounted, onBeforeUnmount, watch } from "vue";
+import { Datepicker } from "flowbite-datepicker";
 
-// 必须导入这个
-import "flowbite/dist/flowbite.js";
+const props = defineProps({
+  modelValue: { type: String, default: "" },
+});
+
+const emit = defineEmits(["update:modelValue"]);
 
 const inputRef = ref(null);
+let picker = null;
+
+function formatDate(d) {
+  const mm = String(d.getMonth() + 1).padStart(2, "0");
+  const dd = String(d.getDate()).padStart(2, "0");
+  const yy = d.getFullYear();
+  return `${mm}/${dd}/${yy}`;
+}
+
+function onChangeDate(e) {
+  const d = e.detail?.date;
+  if (!d) return;
+  emit("update:modelValue", formatDate(d));
+}
+const openStart = () => {
+
+  // 弹层元素
+  const el = picker.pickerElement;
+  if (el) {
+    el.style.top = "120px";
+    el.style.left = "40px";
+  }
+};
 
 onMounted(() => {
-  // 避免 SSR 或 Vite HMR 造成初始化失败
-  setTimeout(() => {
-    if (inputRef.value) {
-      // Flowbite 会自动识别 datepicker 属性，无需 manual init
-      console.log("Datepicker ready");
+  picker = new Datepicker(inputRef.value, {
+    autoselectToday: false,
+  });
+
+  inputRef.value.addEventListener("changeDate", onChangeDate);
+
+  // 如果有默认值，初始化 UI
+  if (props.modelValue) {
+    picker.setDate(props.modelValue);
+  }
+  
+});
+
+
+// 父组件修改 modelValue 时同步 UI
+watch(
+  () => props.modelValue,
+  (v) => {
+    if (!picker) return;
+    if (!v) {
+      picker.setDate(null);
+    } else {
+      picker.setDate(v);
     }
-  }, 50);
+  }
+);
+
+// ✅ 点击图标打开 datepicker
+function openPicker() {
+  if (!picker) return;
+
+  // flowbite datepicker 有 show() 方法
+  if (picker.show) {
+    picker.show();
+  } else {
+    // 兜底：触发 focus
+    inputRef.value?.focus();
+    inputRef.value?.click();
+  }
+}
+
+onBeforeUnmount(() => {
+  inputRef.value?.removeEventListener("changeDate", onChangeDate);
+  picker?.destroy?.();
+  picker = null;
 });
 </script>
+<style lang="scss" scoped>
+
+</style>

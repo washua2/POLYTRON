@@ -4,7 +4,7 @@
             <div class="box w-[110.25rem]" :style="{
                 gridTemplateColumns: `repeat(4, 1fr)`
             }">
-                <div class="w-[26.9375rem] h-[15.375rem] rounded-[0.25rem] border-[0.0625rem] border-[#E4E4E7] relative cursor-pointer"
+                <div class="w-[26.9375rem] h-[15.375rem] rounded-[0.25rem] border-[0.0625rem] border-[#E4E4E7] overflow-hidden relative cursor-pointer"
                     v-for="(item, index) in cameraList" :key="index" @click="handlerDetail(item.id)">
                     <!-- date -->
                     <div class="box-time absolute top-[0.6875rem] right-[0.625rem] text-[0.75rem] text-white">10/23/25,

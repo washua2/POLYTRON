@@ -230,7 +230,7 @@
                             <div class="mt-[1rem] h-[1px] bg-[#EAECEF]"></div>
 
                             <!-- time range -->
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-[1rem] gap-y-[1rem] mt-[1rem]">
+                            <div class="flex items-center gap-[1rem] mt-[1rem]">
                                 <!-- Start Time -->
                                 <div>
                                     <label class="block text-[0.75rem] font-['light'] text-[#717784] mb-[0.25rem]">

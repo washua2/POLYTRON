@@ -78,21 +78,30 @@
 
                     <div class="w-[3.5625rem] h-[3.25rem] flex items-center justify-center  relative"
                         >
-                        <SvgIcon width="1.5rem" height="1.5rem" color="#FFFFFF" icon="video-4" class="cursor-pointer" @click="isShowDateModel = true"/>
-                        <!-- DateModel -->
+                        <CustomDatePicker v-model="CustomDatePickerDate"/>
+                        <!-- <SvgIcon width="1.5rem" height="1.5rem" color="#FFFFFF" icon="video-4" class="cursor-pointer" @click="isShowDateModel = !isShowDateModel"/>
+                      
                         <div class=" absolute top-[-22.5rem] left-[-12.5rem] z-[12]" v-show="isShowDateModel">
-                            <DateModel @handlerDateClose="isShowDateModel = false" @apply="handlerDateApply" />
+                            <CustomDatePicker v-model="startDate" />
+                        </div> -->
+                    </div>
+                    <!--  -->
+                    <div class="w-[3.5625rem] h-[3.25rem] flex items-center justify-center  relative"
+                        >
+                        <SvgIcon width="1.5rem" height="1.5rem" color="#FFFFFF" icon="video-6" class="cursor-pointer" @click="isShowDateModel2 = !isShowDateModel2"/>
+                        <!-- DateModel -->
+                        <div class=" absolute top-[-22.5rem] left-[-12.5rem] z-[12]" v-show="isShowDateModel2">
+                            <DateModel @handlerDateClose="isShowDateModel2 = false" @apply="handlerDateApply" />
                         </div>
+                    </div>
+                     <div class="w-[3.5625rem] h-[3.25rem] flex items-center justify-center cursor-pointer"
+                        @click="isArchiveClipShow = true">
+                        <SvgIcon width="1.5rem" height="1.5rem" color="#FFFFFF" icon="video-7" />
                     </div>
                     <!-- 下载整段视频 -->
                     <div class="w-[3.5625rem] h-[3.25rem] flex items-center justify-center cursor-pointer"
-                        @click="isArchiveClipShow = true">
+                        @click="downloadVideo">
                         <SvgIcon width="1.5rem" height="1.5rem" color="#FFFFFF" icon="video-5" />
-                    </div>
-                    <!-- 截图 -->
-                    <div class="w-[3.5625rem] h-[3.25rem] flex items-center justify-center cursor-pointer"
-                        @click="captureFrame">
-                        <SvgIcon width="1.5rem" height="1.5rem" color="#FFFFFF" icon="video-6" />
                     </div>
                 </div>
             </div>
@@ -107,12 +116,15 @@
 import ArchiveClip from "./components/ArchiveClip.vue";
 import TimeCanvas from "./components/timeCanvas.vue";
 import DateModel from "./components/DateModel.vue";
+import CustomDatePicker from "@/components/CustomDatePicker.vue";
 import { ref } from "vue";
 import { useRouter } from "vue-router";
 
 const router = useRouter();
 const isArchiveClipShow = ref(false);
 const isShowDateModel = ref(false);
+const isShowDateModel2 = ref(false);
+const CustomDatePickerDate= ref("")
 // 视频 src
 const testVideoSrc = "/public/video/test2.mp4";
 

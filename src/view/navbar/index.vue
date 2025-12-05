@@ -1,7 +1,7 @@
 <template>
   <div
     class="w-[114.8125rem] h-[4rem] pr-[1.3125rem] border-b-[0.0625rem] border-[#E1E4EA] flex items-center justify-between">
-    <div class="pl-[1.5rem] py-[1.375rem]">
+    <div class="pl-[0.75rem] py-[1.375rem]">
       <SvgIcon width="10rem" height="1.0625rem" color="#09090B" icon="logo" />
     </div>
     <div class="flex items-center">

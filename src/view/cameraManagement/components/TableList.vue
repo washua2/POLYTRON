@@ -2,7 +2,7 @@
     <div class="w-full">
         <!-- Header -->
         <div class="flex items-center justify-between px-[1.25rem] mb-[1.25rem]">
-            <div class="text-[#09090B] text-[0.875rem] font-['light']">
+            <div class="text-[#09090B] text-[1rem] font-['light']">
                 All Cameras
             </div>
 

@@ -91,7 +91,8 @@ import { onBeforeUnmount, ref, watch } from "vue";
 
 const props = defineProps({
   open: { type: Boolean, default: false },
-  clip: { type: Object, default: null }, // {title,duration,date,time,videoUrl,deviceModel...}
+  clip: { type: Object, default: null }, 
+  // clip: { title,duration,date,time,videoUrl }
 });
 const emit = defineEmits(["update:open", "close", "download", "delete"]);
 
@@ -102,13 +103,51 @@ function close() {
   emit("close");
 }
 
-function handleDownload() {
-  emit("download", props.clip);
-}
-
 function handleDelete() {
   emit("delete", props.clip);
 }
+
+/**
+ * ✅ 下载功能（组件内直接下载）
+ * 1) videoUrl 同源/可直链：a.href + download
+ * 2) 跨域/需要权限：fetch -> blob -> download
+ */
+async function handleDownload() {
+  const url = props.clip?.videoUrl;
+  if (!url) return;
+
+  const safeTitle = (props.clip?.title || "clip")
+    .replace(/[\\/:*?"<>|]/g, "_");
+  const safeTime = (props.clip?.time || "")
+    .replace(/[\\/:*?"<>|]/g, "_");
+  const fileName = `${safeTitle}${safeTime ? "_" + safeTime : ""}.mp4`;
+
+  try {
+    // ✅ 只用 fetch + blob，不会跳页面
+    const res = await fetch(url, { mode: "cors" });
+    if (!res.ok) throw new Error("Download failed");
+
+    const blob = await res.blob();
+    const blobUrl = URL.createObjectURL(blob);
+
+    const a = document.createElement("a");
+    a.href = blobUrl;
+    a.download = fileName;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+
+    URL.revokeObjectURL(blobUrl);
+
+    emit("download", props.clip); // 保留事件
+  } catch (e) {
+    console.error(e);
+    // 这里不跳转页面，只提示失败
+    // 你可以换成 toast / message
+    // alert("Download failed. Please check CORS or URL permissions.");
+  }
+}
+
 
 // full screen
 function toggleFullscreen() {
@@ -121,7 +160,7 @@ function toggleFullscreen() {
   }
 }
 
-// open 时自动从头播放（更像截图）
+// open 时自动从头播放
 watch(
   () => props.open,
   (v) => {

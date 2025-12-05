@@ -5,7 +5,7 @@
             <div
                 class="w-[7.875rem] h-[3.25rem] pt-[0.9375rem] pb-[1rem] pl-[0.875rem] rounded-[0.5rem] border-[0.0625rem] border-[#E1E4EA] flex items-center cursor-pointer"
                  @click="handlerAllSites">
-                <SvgIcon width="1.25rem" height="1.25rem" color="#09090B" icon="address" />
+                <SvgIcon width="1.25rem" height="1.25rem" color="#09090B" icon="address" class="mb-[0.125rem]" />
                 <div
                     class="h-[1.3125rem] ml-[0.5rem] mr-[0.3438rem] justify-start text-[#09090B] text-[0.875rem] font-['Semibold']">
                     All Sites</div>
