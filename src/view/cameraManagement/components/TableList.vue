@@ -66,7 +66,7 @@
                                 <div class="truncate text-[#09090B] text-[0.875rem] font-['light']">
                                     {{ row.deviceName }}
                                 </div>
-                                <div class="text-[#717784] text-[0.6875rem] font-['light']">
+                                <div class="text-[#717784] text-[0.75rem] font-['light']">
                                     {{ row.deviceType }}
                                 </div>
                             </div>

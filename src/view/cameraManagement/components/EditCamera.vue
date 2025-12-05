@@ -285,11 +285,12 @@
 
                     <!-- footer buttons -->
                     <div class="flex items-center justify-end gap-[0.75rem] mt-[2.9375rem]">
-                        <button type="button" class="w-[9.375rem] h-[2.5rem] rounded-[0.5rem]
+                        <!-- <button type="button" class="w-[9.375rem] h-[2.5rem] rounded-[0.5rem]
                    border-[0.0625rem] border-[#E1E4EA] hover:bg-[#f0f1f5] transition
                    text-[#09090B] text-[0.875rem] font-['light']" @click="handlePrevious">
                             Previous Step
-                        </button>
+                        </button> -->
+                        
 
                         <button type="submit" form="editCameraForm" class="w-[9.375rem] h-[2.5rem] rounded-[0.5rem]
                    border-[0.0625rem] border-[#1C64F2] bg-[#1C64F2]

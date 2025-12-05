@@ -111,10 +111,7 @@
                     {{ mode === "login" ? "Log in" : "Sign up" }}
                 </button>
 
-                <!-- success text -->
-                <p v-if="successMsg" class="text-center text-[0.75rem] text-green-600 font-['light']">
-                    {{ successMsg }}
-                </p>
+                
             </form>
         </div>
     </div>
