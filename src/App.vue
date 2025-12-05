@@ -14,7 +14,7 @@ provide("store", store);
 
 <style>
 html{
-    /* overflow: hidden; */
+    overflow: hidden;
 }
 input{
     box-shadow: none !important;
