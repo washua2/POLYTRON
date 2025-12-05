@@ -237,13 +237,7 @@
                                         Start Time
                                     </label>
                                     <div class="relative">
-                                        <input v-model="form.customStart" type="time" class="w-full h-[2.3125rem] font-['light'] flex items-center rounded-[0.5rem]
-                           text-[0.875rem] border border-gray-200 px-4 py-[0.5rem]
-                           outline-none transition focus:ring-2 focus:ring-blue-200" />
-                                        <div
-                                            class="absolute right-3 top-1/2 -translate-y-1/2 text-[#717784] text-[0.875rem] pointer-events-none">
-                                            <SvgIcon width="1rem" height="1rem" icon="clock" color="#09090B"/>
-                                        </div>
+                                        <CustomTimeSecondPicker v-model="form.customStart" />
                                     </div>
                                 </div>
 
@@ -253,13 +247,7 @@
                                         End Time
                                     </label>
                                     <div class="relative">
-                                        <input v-model="form.customEnd" type="time" class="w-full h-[2.3125rem] font-['light'] flex items-center rounded-[0.5rem]
-                           text-[0.875rem] border border-gray-200 px-4 py-[0.5rem]
-                           outline-none transition focus:ring-2 focus:ring-blue-200" />
-                                        <div
-                                            class="absolute right-3 top-1/2 -translate-y-1/2 text-[#717784] text-[0.875rem] pointer-events-none">
-                                            <SvgIcon width="1rem" height="1rem" icon="clock" color="#09090B" />
-                                        </div>
+                                        <CustomTimeSecondPicker v-model="form.customEnd" />
                                     </div>
                                 </div>
                             </div>
@@ -314,12 +302,14 @@
             </div>
         </div>
     </div>
-    </transition>
+</transition>
 </template>
 
 <script setup>
 import { reactive ,defineEmits} from "vue";
 import BaseSelect from "@/components/BaseSelect.vue";
+import CustomTimeSecondPicker from "@/components/CustomTimeSecondPicker.vue"; // Import the custom time picker component
+
 const emit= defineEmits(['handlerClose'])
 const deviceTypes = ["PTZ", "IPC", "NVR", "DVR", "Doorbell", "Other"];
 const brands = ["Hikvision", "Dahua", "Axis", "Reolink", "Other"];
@@ -354,8 +344,8 @@ const form = reactive({
 
     isAuto: true,
     recordMode: "24_7",           // "24_7" | "custom"
-    customStart: "00:00",         // custom 开启时显示
-    customEnd: "00:00",
+    customStart: "00:00:00",      // custom 开启时显示
+    customEnd: "00:00:00",
     repeatDays: [],               // ["Mon","Tue"...]
     storagePolicy: "auto_overwrite",
 });

@@ -12,7 +12,8 @@
                     style="box-shadow: none;" @keydown.enter="handleSearch" />
             </div>
             <div
-                class="w-[7.875rem] h-[3.25rem] ml-[1.25rem] rounded-[0.5rem] bg-[#1C64F2] overflow-hidden flex items-center justify-center cursor-pointer">
+                class="w-[7.875rem] h-[3.25rem] ml-[1.25rem] rounded-[0.5rem] bg-[#1C64F2] overflow-hidden flex items-center justify-center 
+                cursor-pointer" @click="isAddCameras = true">
                 <div class="justify-start text-white text-[0.875rem] font-['medium']">+ Add Camera</div>
             </div>
         </div>
@@ -25,16 +26,27 @@
         <!-- DeleteModel -->
         <DeleteModel v-model:open="showDelete" :loading="deleteLoading" @confirm="doDelete"
             @cancel="showDelete = false" />
-
+        <!-- AddCameras -->
+        <AddCameras @manualSubmit="manualSubmit" @scanEdit="scanEdit" @scanConfirm="scanConfirm" @close="isAddCameras=false" v-if="isAddCameras" />
+         <!-- DeviceDetailsModal -->
+        <DeviceDetailsModal v-model:open="detailOpen" :device="currentDevice" @confirm="onConfirmDevice" />
+        <!-- <DeviceAddedSuccessModal -->
+        <DeviceAddedSuccessModal v-if="isSuccess" @accessSurveillance="isSuccess=false" @continueAdding="continueAdding" @close="isSuccess=false" />
     </div>
 </template>
 <script setup>
 import EditCamera from "./components/EditCamera.vue"
+import AddCameras from "./components/AddCameras.vue"
 import TableList from "./components/TableList.vue"
 import DeleteModel from "./components/DeleteModel.vue"
+import DeviceDetailsModal from "./components/DeviceDetailsModal.vue"
+import DeviceAddedSuccessModal from "./components/DeviceAddedSuccessModal.vue"
 import { ref, reactive, computed, watch } from 'vue'
 const inputValue = ref('')
 const isEditCamera = ref(false)
+const isAddCameras = ref(false);
+const isSuccess = ref(false);
+const detailOpen = ref(false);
 const showDelete = ref(false);
 const deleteLoading = ref(false);
 const handleSearch = () => {
@@ -56,7 +68,17 @@ const handlerDelete = () => {
     //     deleteLoading.value = false;
     // }
 }
-
+const scanEdit= () => {
+    detailOpen.value = true;
+}
+const scanConfirm = () => {
+    isAddCameras.value = false;
+    isSuccess.value = true;
+}
+const continueAdding = () => {
+    isAddCameras.value = true;
+    isSuccess.value = false;
+}
 </script>
 <style lang="scss" scoped>
 .ipt-box {

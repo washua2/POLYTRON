@@ -45,14 +45,18 @@
         </div>
         <!-- player modal -->
         <ClipPlayerModal v-model:open="playerOpen" :clip="currentClip" @download="onDownload" @delete="onDelete" />
+          <!-- DeleteModel -->
+       <DeleteModel v-model:open="showDelete" :loading="deleteLoading" @confirm="doDelete"/>
     </div>
 </template>
 
 <script setup>
 import ClipPlayerModal from './ClipPlayerModal.vue';
+import DeleteModel from './DeleteModel.vue';
 import { computed, ref } from "vue";
 const playerOpen = ref(false);
 const currentClip = ref(null);
+const showDelete = ref(false);
 /**
  * 你可以把 list 换成接口数据。
  * 字段格式见下面 mock。
@@ -121,6 +125,7 @@ function onDownload(clip) {
 }
 function onDelete(clip) {
     console.log("delete clip:", clip);
+    showDelete.value = true;
 }
 </script>
 

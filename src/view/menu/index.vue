@@ -51,7 +51,7 @@ const menuList = ref([
     { title: "Camera", icon: "menu-2", iconActive: "menu-2-active", router: "/cameras" },
     { title: "Management", icon: "menu-3", iconActive: "menu-3-active", router: "/cameraManagement" },
     { title: "Archive", icon: "menu-4", iconActive: "menu-4-active", router: "/archive" },
-    { title: "Settings", icon: "menu-5", iconActive: "menu-5-active", router: "/settings" },
+    { title: "User", icon: "menu-5", iconActive: "menu-5-active", router: "/user" },
 ]);
 
 // 根据当前路由计算高亮索引

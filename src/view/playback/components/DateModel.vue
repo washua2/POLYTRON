@@ -18,7 +18,7 @@
             </div>
 
             <!-- Start Time (Flatpickr) -->
-            <CustomTimePicker v-model="startTime" />
+            <CustomTimeSecondPicker v-model="startTime" />
         </div>
 
         <!-- END -->
@@ -38,7 +38,7 @@
             </div>
 
             <!-- End Time (Flatpickr) -->
-            <CustomTimePicker v-model="endTime" />
+            <CustomTimeSecondPicker v-model="endTime" />
         </div>
 
         <div class="w-[19.5625rem] h-[0.0625rem] bg-[#E1E4EA] mt-[2.1875rem] mb-[1.5625rem]"></div>
@@ -55,7 +55,7 @@
 </template>
 
 <script setup>
-import CustomTimePicker from "@/components/CustomTimePicker.vue";
+import CustomTimeSecondPicker from "@/components/CustomTimeSecondPicker.vue";
 import { ref, onMounted } from "vue";
 import { Datepicker } from "flowbite-datepicker";
 import flatpickr from "flatpickr";
@@ -71,10 +71,10 @@ const endTimeRef = ref(null);
 
 // Values
 const startDate = ref("01/01/2023");
-const startTime = ref("00:00");
+const startTime = ref("00:00:00");
 
 const endDate = ref("02/04/2024");
-const endTime = ref("24:00");
+const endTime = ref("24:00:00");
 
 const emit = defineEmits(["apply","handlerDateClose"]);
 
