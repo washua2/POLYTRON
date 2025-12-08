@@ -6,7 +6,7 @@
              outline-none transition flex items-center
              focus:ring-2 "
             :class="error ? 'border-red-400 focus:ring-red-100' : 'border-gray-200'" style="box-shadow: none;">
-            <span :class="modelValue ? 'text-[#09090B]' : 'text-gray-400'">
+            <span class="text-[#09090B]">
                 {{ selectedLabel || placeholder }}
             </span>
 

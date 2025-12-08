@@ -1,8 +1,8 @@
 <template>
-    <div class="mt-[1.25rem]">
+    <div class="h-[24.0625rem] pb-[2rem] mt-[1.25rem] overflow-y-auto overflow-x-hidden scroll">
         <div class="justify-center text-[#09090B] text-[0.875rem] font-['medium']">Scan for camera devices in the local
             area network</div>
-        <div class="flex flex-col items-center gap-[1rem] mt-[0.75rem] fhd:mt-[3rem] qhd:mt-[3rem] uhd:mt-[3rem]">
+        <div class="flex flex-col items-center gap-[1rem] mt-[3rem] fhd:mt-[3rem] qhd:mt-[3rem] uhd:mt-[3rem]">
             <div class="w-[6rem] h-[6rem] spin-infinite">
                 <img src="@/assets/images/scan.png" alt="" class="w-full h-full object-cover">
             </div>
@@ -51,7 +51,7 @@
             </div>
         </div>
         <!-- Actions -->
-        <div class="flex items-center gap-[1rem] justify-end absolute bottom-[1.25rem] right-[1.25rem]">
+        <div class="w-full pr-[1.25rem] py-[1.25rem] flex items-center gap-[1rem] justify-end absolute bottom-0 right-0" style="box-shadow: 0 -0.0625rem 0.625rem 0 rgba(0, 0, 0, 0.15);">
             <button
                 class="w-[9.375rem] h-[2.5rem] py-[0.5rem] px-[0.75rem] rounded-[0.5rem] border-[0.0625rem] border-[#E1E4EA] overflow-hidden hover:bg-[#f0f1f5]"
                 @click="handlerRescan">

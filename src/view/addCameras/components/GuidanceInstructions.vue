@@ -114,7 +114,7 @@
             <ManualAddition @handlerComplete="handlerComplete" @handlerPreviousStep="handlerPreviousStep"
                 v-if="activeCount == 0" />
             <!-- ScanCameratoAdd -->
-            <ScanCameratoAdd @handlerRescan="handlerRescan" @handlerConfirm="handlerConfirm" @handlerEdit="handlerEdit" v-else />
+            <ScanCameratoAdd @handlerRescan="handlerRescan" @handlerConfirm="handlerConfirm" @handlerEdit="handlerEdit" class="mr-[-0.625rem]" v-else />
         </div>
         <!-- DeviceDetailsModal -->
         <DeviceDetailsModal v-model:open="detailOpen" :device="currentDevice" @confirm="onConfirmDevice" />

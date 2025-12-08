@@ -88,7 +88,8 @@
                         </div>
                     </div>
                     <div id="clips" class="flex items-center gap-[4.25rem]">
-                        <div class="justify-start text-[#09090B] text-[1.125rem] font-['medium']">Heatmaps</div>
+                        <div class="flex items-center justify-center  text-[1.125rem] font-['medium'] cursor-pointer 
+                        w-[7.875rem] h-[2.625rem] rounded-[0.5rem]  " :class="isHeatmaps?'bg-[#1C64F2] text-white':'text-[#09090B]'" @click="isHeatmaps = !isHeatmaps">Heatmaps</div>
                         <div class="relative">
                             <div class="flex items-center gap-[0.75rem] cursor-pointer" @click="handlerClips">
                                 <div class="justify-start text-[#09090B] text-[1.125rem] font-['medium']">Clips</div>
@@ -150,6 +151,7 @@ const showBackTop = ref(false);
 const controlIndex = ref(0)
 const isClipsModel = ref(false)
 const isShowDateModel = ref(false)
+const isHeatmaps = ref(false)
 const controlList = [
     { id: 1, icon: "control-1", color: "#6B717D" },
     { id: 2, icon: "control-2", color: "#6B717D" },

@@ -5,11 +5,13 @@
             <div class="mr-[11.125rem] justify-start text-[#09090B] text-[1.75rem] font-['bold']">Camera Management
             </div>
             <div
-                class="w-[67.8125rem] h-[3.25rem] pl-[1.25rem] rounded-[0.5rem] border-[0.0625rem] border-[#E1E4EA] bg-white overflow-hidden flex items-center">
+                class="w-[67.8125rem] h-[3.25rem] pl-[1.25rem] rounded-[0.5rem] border-[0.0625rem] border-[#E1E4EA] bg-white overflow-hidden relative flex items-center">
                 <SvgIcon width="1.25rem" height="1.25rem" color="#99A0AE" icon="search" />
                 <input type="text" placeholder="Search cameras.." v-model="inputValue"
                     class="w-[56.25rem] h-[1.125rem] ipt p-0 m-0 font-normal font-['Roboto'] text-[#09090B] text-[0.875rem] border-none outline-none pt-[0.125rem]  ml-[0.75rem]"
                     style="box-shadow: none;" @keydown.enter="handleSearch" />
+                <SvgIcon width="1.25rem" height="1.25rem" color="#09090B" icon="search-close"
+                 class=" absolute right-[1.5rem] top-[50%] translate-y-[-50%] cursor-pointer" @click="handleClear" v-show="inputValue.length"/>
             </div>
             <div
                 class="w-[7.875rem] h-[3.25rem] ml-[1.25rem] rounded-[0.5rem] bg-[#1C64F2] overflow-hidden flex items-center justify-center 
@@ -78,6 +80,10 @@ const scanConfirm = () => {
 const continueAdding = () => {
     isAddCameras.value = true;
     isSuccess.value = false;
+}
+
+const handleClear= () => {
+    inputValue.value = ''
 }
 </script>
 <style lang="scss" scoped>

@@ -14,7 +14,7 @@ provide("store", store);
 
 <style>
 html{
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 input{
     box-shadow: none !important;
@@ -33,7 +33,7 @@ input{
 
 /* 针对webkit内核浏览器的自定义样式 */
 .scroll::-webkit-scrollbar {
-    width: 0.375rem;
+    width: 0.25rem;
     height: 2.0625rem;
 }
 

@@ -2,9 +2,11 @@
     <div>
         <div class="my-[1.25rem] justify-center text-[#09090B] text-[0.875rem] font-['medium']">Device Information
             Filling</div>
+        <div class="h-[22rem] fhd:h-[23.375rem] qhd:h-[23.375rem] uhd:h-[23.375rem] overflow-y-auto overflow-hidden scroll">
+
         <div
-            class="w-[46.125rem] h-[19rem]  fhd:h-[23.375rem] qhd:h-[23.375rem] uhd:h-[23.375rem] overflow-y-auto overflow-hidden scroll">
-            <form class="w-[44.875rem] " id="deviceForm" @submit.prevent="handleSubmit">
+            class="w-[46.125rem] h-[22.75rem] ">
+            <form class="w-[44.5rem] " id="deviceForm" @submit.prevent="handleSubmit">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-x-[0.875rem] gap-y-[1rem]">
                     <!-- Device Type -->
                     <div>
@@ -122,7 +124,8 @@
             </form>
         </div>
         <!-- footer -->
-        <div class="pt-[0.875rem]">
+        <div class="w-full h-[5rem] flex items-center" >
+            <div>
             <div class="justify-center text-[#09090B] text-[0.875rem] font-['medium']">Recording Rule Settings</div>
             <label class="flex items-center gap-[0.5rem] mt-[0.875rem] cursor-pointer select-none">
                 <input type="checkbox" v-model="form.isAuto"
@@ -132,9 +135,13 @@
                     </span><span class="text-[#717784] text-[0.75rem] font-['light']">(Continuous
                         Recording)</span></div>
             </label>
+            </div>
+
+        </div> 
         </div>
+
         <!-- Actions -->
-        <div class="flex items-center gap-[1rem] justify-end absolute bottom-[1.25rem] right-[1.25rem]">
+        <div class="w-full py-[1.25rem] pr-[1.25rem] flex items-center gap-[1rem] justify-end absolute bottom-0 right-0" style="box-shadow: 0 -0.0625rem 0.625rem 0 rgba(0, 0, 0, 0.15);">
             <button  class="w-[9.375rem] h-[2.5rem] py-[0.5rem] px-[0.75rem] rounded-[0.5rem] border-[0.0625rem] border-[#E1E4EA] overflow-hidden hover:bg-[#f0f1f5]" @click="handlerPreviousStep">
                 <div class="justify-center text-[#09090B] text-[0.875rem] font-['light']">Previous Step</div>
             </button>

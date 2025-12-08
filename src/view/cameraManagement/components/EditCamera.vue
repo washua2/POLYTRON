@@ -8,7 +8,7 @@
     leave-to-class="opacity-0"
   >
     <div class="fixed top-0 left-0 right-0 bottom-0 z-[99] flex items-center justify-center bg-[rgba(0,0,0,0.70)]">
-        <div class="w-[48.125rem] bg-white rounded-[1rem] overflow-hidden">
+        <div class="w-[48.125rem] bg-white rounded-[1rem] overflow-hidden relative">
             <!-- header -->
             <div class="flex items-center justify-between px-[1.25rem] py-[1.25rem] border-b border-[#EAECEF]">
                 <div class="text-[#09090B] text-[1rem] font-['medium']">Edit Camera</div>
@@ -34,7 +34,7 @@
             <!-- body -->
             <div class="pr-[0.625rem]">
                 <div
-                    class="h-[43.75rem] px-[1.25rem] pr-[0.625rem] py-[1.25rem]  overflow-y-auto overflow-hidden scroll">
+                    class="h-[43.75rem] px-[1.25rem] pr-[0.625rem] py-[1.25rem] pb-[10.625rem]  overflow-y-auto overflow-hidden scroll">
                     <form id="editCameraForm" @submit.prevent="handleSubmit">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-x-[1rem] gap-y-[1rem]">
                             <!-- Device Type -->
@@ -284,13 +284,14 @@
                     </div>
 
                     <!-- footer buttons -->
-                    <div class="flex items-center justify-end gap-[0.75rem] mt-[2.9375rem]">
+                    <div class="w-full flex items-center justify-end gap-[0.75rem] mt-[2.9375rem] pr-[1.5rem] pb-[1.25rem] pt-[1.5rem]
+                     bg-white absolute bottom-0 right-0" style="box-shadow: 0 -0.0625rem 0.625rem 0 rgba(0, 0, 0, 0.15);">
                         <!-- <button type="button" class="w-[9.375rem] h-[2.5rem] rounded-[0.5rem]
                    border-[0.0625rem] border-[#E1E4EA] hover:bg-[#f0f1f5] transition
                    text-[#09090B] text-[0.875rem] font-['light']" @click="handlePrevious">
                             Previous Step
                         </button> -->
-                        
+
 
                         <button type="submit" form="editCameraForm" class="w-[9.375rem] h-[2.5rem] rounded-[0.5rem]
                    border-[0.0625rem] border-[#1C64F2] bg-[#1C64F2]

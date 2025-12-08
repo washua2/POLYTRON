@@ -76,9 +76,6 @@
                             </div>
                             <!-- people -->
                             <div class="w-full mt-[1.3125rem]" v-show="selectCount == 0">
-                                <div
-                                    class="pl-[1.25rem] justify-start text-[#44444E] text-[0.875rem] font-normal font-['Roboto'] capitalize line-clamp-1">
-                                    date:</div>
                                 <div class="mt-[0.4375rem] flex flex-col">
                                     <div class="w-full h-[2.5rem] py-[0.6875rem] px-[1.25rem]  flex items-center justify-between cursor-pointer hover:bg-[#F4F5F6]"
                                         :class="item.checked ? 'bg-[#F4F5F6] ' : ''" v-for="(item, index) in peopleList"
@@ -162,7 +159,11 @@ const selectList = ref([{
 }, {
     title: 'Vehicles'
 }])
-const peopleList = ref([{
+const peopleList = ref([
+    {
+    name: "date:",
+    checked: false
+},{
     name: "Upper body:",
     checked: false
 }, {

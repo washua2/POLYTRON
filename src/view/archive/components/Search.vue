@@ -9,7 +9,7 @@
                  transition-all duration-200 ease-in-out absolute top-0 left-0 z-[12]"
                         >
                         <div
-                            class="h-[3.25rem] ml-[1.25rem] py-[1rem] mr-[1rem] flex items-center justify-between border-b-[0.0625rem] border-[#E1E4EA]">
+                            class="h-[3.25rem] ml-[1.25rem] py-[1rem] mr-[1rem] flex items-center justify-between border-b-[0.0625rem] border-[#E1E4EA] relative">
                             <div class="flex items-center">
                                 <SvgIcon width="1.25rem" height="1.25rem" color="#99A0AE" icon="search" />
                                 <input type="text" placeholder="Search cameras.." v-model="inputValue"
@@ -17,7 +17,6 @@
                                     class="w-[56.25rem] h-[1.125rem] ipt p-0 m-0 font-normal font-['Roboto'] text-[#09090B] text-[0.875rem] border-none outline-none pt-[0.125rem]  ml-[0.75rem]"
                                     style="box-shadow: none;" @focus="handlerFocus" @blur="handlerBlur"
                                     @keydown.enter="handleSearch" />
-
                             </div>
                             <div class="flex items-center">
                                 <div class="w-[1.5rem] h-[1.5rem] flex items-center justify-center cursor-pointer"
