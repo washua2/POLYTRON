@@ -1,5 +1,5 @@
 <template>
-    <div class="h-[24.0625rem] pb-[2rem] mt-[1.25rem] overflow-y-auto overflow-x-hidden scroll">
+    <div class="h-[24.0625rem] fhd:h-[28.375rem] qhd:h-[28.375rem] uhd:h-[28.375rem] pb-[2rem] mt-[1.25rem] overflow-y-auto overflow-x-hidden scroll">
         <div class="justify-center text-[#09090B] text-[0.875rem] font-['medium']">Scan for camera devices in the local
             area network</div>
         <div class="flex flex-col items-center gap-[1rem] mt-[3rem] fhd:mt-[3rem] qhd:mt-[3rem] uhd:mt-[3rem]">

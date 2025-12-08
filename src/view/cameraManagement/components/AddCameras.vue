@@ -51,7 +51,7 @@
           v-show="activeTab === 'manual'"
           class="pr-[1rem] h-[34rem] pb-[2rem] overflow-y-auto overflow-hidden scroll"
         >
-          <div class="my-[0.75rem] text-[#09090B] text-[0.875rem] font-['medium']">
+          <div class="my-[0.75rem] mt-0 text-[#09090B] text-[0.875rem] font-['medium']">
             Device Information Filling
           </div>
 
@@ -368,7 +368,7 @@
         <!-- =============== Scan Camera to Add =============== -->
         <div
           v-show="activeTab === 'scan'"
-          class="mt-[0.5rem] h-[24.0625rem] pr-[0.625rem] pb-[2rem] overflow-y-auto overflow-x-hidden scroll"
+          class=" h-[24.0625rem] pr-[0.625rem] pb-[2rem] overflow-y-auto overflow-x-hidden scroll"
         >
           <div class="justify-center text-[#09090B] text-[0.875rem] font-['medium']">
             Scan for camera devices in the local area network

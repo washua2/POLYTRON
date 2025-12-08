@@ -4,8 +4,8 @@
       Device Information Filling
     </div>
 
-    <div class="h-[22rem] fhd:h-[23.375rem] qhd:h-[23.375rem] uhd:h-[23.375rem] overflow-y-auto overflow-hidden scroll">
-      <div class="w-[46.125rem] h-[22.75rem]">
+    <div class="h-[22rem]  fhd:h-[25.375rem] qhd:h-[25.375rem] uhd:h-[25.375rem] overflow-y-auto overflow-hidden scroll">
+      <div class="w-[46.125rem] h-[22.75rem] ">
         <form class="w-[44.5rem]" id="deviceForm" @submit.prevent="handleSubmit">
           <div class="grid grid-cols-1 md:grid-cols-2 gap-x-[0.875rem] gap-y-[1rem]">
             <!-- Device Type -->
@@ -296,7 +296,7 @@
             </div>
 
             <!-- Storage Policy -->
-            <div class="mt-[1.25rem] w-[21.5rem]">
+            <div class="mt-[1.25rem] w-[21.5rem] pb-[2rem]">
               <div class="text-[#717784] text-[0.75rem] font-['light'] mb-[0.25rem]">
                 Storage Policy
               </div>

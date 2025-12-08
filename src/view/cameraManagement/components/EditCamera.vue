@@ -34,7 +34,7 @@
             <!-- body -->
             <div class="pr-[0.625rem]">
                 <div
-                    class="h-[43.75rem] px-[1.25rem] pr-[0.625rem] py-[1.25rem] pb-[10.625rem]  overflow-y-auto overflow-hidden scroll">
+                    class="h-[43.75rem] fhd:h-[43.75rem] qhd:h-[43.75rem] uhd:h-[43.75rem] px-[1.25rem] pr-[0.625rem] py-[1.25rem] pb-[8.125rem]  overflow-y-auto overflow-hidden scroll">
                     <form id="editCameraForm" @submit.prevent="handleSubmit">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-x-[1rem] gap-y-[1rem]">
                             <!-- Device Type -->
