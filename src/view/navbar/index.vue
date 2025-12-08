@@ -17,8 +17,9 @@
       <div class="w-[0.0625rem] h-[1.375rem] ml-[1.375rem] mr-[1.25rem] bg-[#E1E4EA]"></div>
       <div id="language" class="relative">
         <div class="flex items-center gap-[0.5625rem] cursor-pointer" @click="isShow = !isShow">
-          <div class="w-[1.25rem] h-[1.25rem] rounded-full bg-[#E1E4EA]">
-            <img src="@/assets/images/us.png" class="w-full h-full object-cover" alt="">
+          <div class="w-[1.25rem] h-[1.25rem] rounded-full bg-[#E1E4EA] overflow-hidden">
+            <img src="@/assets/images/us.png" class="w-full h-full object-cover" alt="" v-show="selectedLang == 'us'">
+            <img src="@/assets/images/zh.svg" class="w-full h-full object-cover" alt="" v-show="selectedLang == 'cn'">
           </div>
           <div class="w-[5.1875rem] justify-center text-[#09090B] text-[0.875rem] font-['light']">
             {{ selectedLang == 'cn' ? 'Chinese (CN)' : 'English (US)' }}
