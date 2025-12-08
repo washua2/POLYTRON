@@ -58,4 +58,31 @@ input{
   -webkit-overflow-scrolling: touch; /* iOS 顺滑惯性滚动 */
 }
 
+/* 针对webkit内核浏览器的自定义样式 */
+.scroll-thinck::-webkit-scrollbar {
+    width: 0.375rem;
+    height: 2.0625rem;
+}
+
+.scroll-thinck::-webkit-scrollbar-track {
+    background: #E4E4E7;
+    /* 滚动条轨道的颜色 */
+}
+
+.scroll-thinck::-webkit-scrollbar-thumb {
+    background-color: #1C64F2;
+    /* 滚动条的颜色 */
+    border-radius: 0.625rem;
+    /* 滚动条圆角 */
+}
+
+.scroll-thinck::-webkit-scrollbar-thumb:hover {
+    background: #1C64F2;
+    /* 滚动条hover颜色 */
+    cursor: pointer;
+}
+.scroll-thinck {
+  -webkit-overflow-scrolling: touch; /* iOS 顺滑惯性滚动 */
+}
+
 </style>

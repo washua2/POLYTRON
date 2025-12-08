@@ -29,14 +29,14 @@
         <div class="flex items-center gap-[1.5rem] text-[0.75rem] font-['medium']">
           <div
             class="cursor-pointer select-none pb-[0.5rem]"
-            :class="activeTab === 'manual' ? 'text-[#1C64F2] border-b-2 border-[#1C64F2]' : 'text-[#717784]'"
+            :class="activeTab === 'manual' ? 'text-[#1C64F2] border-b-[0.125rem] border-[#1C64F2]' : 'text-[#717784] border-b-[0.125rem] border-transparent'"
             @click="activeTab = 'manual'"
           >
             + Manual Addition
           </div>
           <div
             class="cursor-pointer select-none pb-[0.5rem]"
-            :class="activeTab === 'scan' ? 'text-[#1C64F2] border-b-2 border-[#1C64F2]' : 'text-[#717784]'"
+            :class="activeTab === 'scan' ? 'text-[#1C64F2] border-b-[0.125rem] border-[#1C64F2]' : 'text-[#717784] border-b-[0.125rem] border-transparent'"
             @click="activeTab = 'scan'"
           >
             Scan Camera to Add

@@ -7,7 +7,7 @@
             <div
                 class="mt-[2.125rem] pl-[1.25rem] mb-[1.125rem] text-[#09090B] text-[1rem] font-normal font-['Roboto'] tracking-tight">
                 93 Results Found</div>
-            <div class=" pl-[1.25rem] h-[37.5rem] ipad:h-[60rem] fhd:h-[47.8125rem] qhd:h-[47.8125rem] uhd:h-[47.8125rem] overflow-y-auto overflow-hidden scroll"
+            <div class=" pl-[1.25rem] h-[37.5rem] ipad:h-[60rem] fhd:h-[47.8125rem] qhd:h-[47.8125rem] uhd:h-[47.8125rem] overflow-y-auto overflow-hidden scroll-thinck"
                 :class="isUploadImage ? 'pr-[1.5rem]' : 'pr-[1.5rem]'">
                 <div class="box " :style="{
                     gridTemplateColumns: `repeat(auto-fill, minmax(22.1875rem, 1fr)`

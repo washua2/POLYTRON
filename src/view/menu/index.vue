@@ -104,6 +104,6 @@ onMounted(() => {
 <style lang="scss" scoped>
 .box-menu{
     background: #FFF;
-box-shadow: 0 0.0625rem 1rem 0 rgba(0, 7, 22, 0.20);
+box-shadow: 0 0.0313rem 0.5rem 0 rgba(0, 7, 22, 0.20);
 }
 </style>
