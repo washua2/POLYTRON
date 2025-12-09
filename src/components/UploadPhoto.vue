@@ -227,7 +227,7 @@ onBeforeUnmount(() => {
     border: 0.0625rem solid #CCCFD4;
     color: #09090B;
     font-family: Roboto;
-    font-size: 14px;
+    font-size: 0.875rem;
     font-style: normal;
     font-weight: 400;
 }

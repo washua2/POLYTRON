@@ -47,7 +47,7 @@
 
                 <!-- Table Body -->
                 <div
-                    class="min-h-[32rem] ipad:min-h-[56.25rem] fhd:min-h-[42.5rem] qhd:min-h-[42.5rem] uhd:min-h-[42.5rem] overflow-y-auto overflow-x-hidden scroll">
+                    class="h-[32rem] ipad:min-h-[56.25rem] fhd:min-h-[42.5rem] qhd:min-h-[42.5rem] uhd:min-h-[42.5rem] overflow-y-auto overflow-x-hidden scroll">
                     <div v-for="row in filteredList" :key="row.id" class="grid items-center px-[1rem] py-[0.75rem] text-[0.875rem] text-[#09090B]
                  border-t border-[#F0F1F5] hover:bg-[#FAFBFC] transition" :style="gridStyle">
                         <!-- checkbox -->
@@ -236,7 +236,7 @@ const cameraList = ref([
         addTime: "3:28 PM | 26.6.2024",
         thumb: "https://picsum.photos/80/80?4",
         isMore: false,
-    },
+    }
     
 ]);
 const totalPages=ref(100)

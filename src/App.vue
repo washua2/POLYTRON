@@ -84,5 +84,4 @@ input{
 .scroll-thinck {
   -webkit-overflow-scrolling: touch; /* iOS 顺滑惯性滚动 */
 }
-
 </style>
