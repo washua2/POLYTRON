@@ -15,13 +15,13 @@
             <!-- tabs -->
             <div class="mt-[1.25rem] bg-[#F3F4F6] rounded-[0.375rem] p-[0.25rem] flex items-center">
                 <button type="button"
-                    class="flex-1 h-[2.25rem] rounded-[0.375rem] text-[0.875rem] font-['medium'] transition" :class="mode === 'login'
+                    class="flex-1 h-[2.25rem] rounded-[0.375rem] text-[0.875rem] font-['medium'] transition ease-in-out duration-300" :class="mode === 'login'
                         ? 'bg-white text-[#18181B] shadow-sm'
                         : 'text-[#717784] hover:text-[#18181B]'" @click="switchMode('login')">
                     Log in
                 </button>
                 <button type="button"
-                    class="flex-1 h-[2.25rem] rounded-[0.375rem] text-[0.875rem] font-['medium'] transition" :class="mode === 'signup'
+                    class="flex-1 h-[2.25rem] rounded-[0.375rem] text-[0.875rem] font-['medium'] transition ease-in-out duration-300" :class="mode === 'signup'
                         ? 'bg-white text-[#18181B] shadow-sm'
                         : 'text-[#717784] hover:text-[#18181B]'" @click="switchMode('signup')">
                     Sign Up
