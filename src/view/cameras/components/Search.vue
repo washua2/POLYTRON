@@ -7,7 +7,7 @@
                  @click="handlerAllSites">
                 <SvgIcon width="1.25rem" height="1.25rem" color="#09090B" icon="address" class="mb-[0.125rem]" />
                 <div
-                    class="h-[1.3125rem] ml-[0.5rem] mr-[0.3438rem] justify-start text-[#09090B] text-[0.875rem] font-['Semibold']">
+                    class="h-[1.3125rem] ml-[0.5rem] mr-[0.3438rem] justify-start text-[#09090B] text-[0.875rem] font-['Semibold'] leading-[160%]">
                     All Sites</div>
                 <div class="w-[1rem] h-[1rem] flex items-center justify-center">
                     <SvgIcon width="1rem" height="0.375rem" color="#717784" icon="arrow-down" class=" transition-all duration-300 ease-in-out " 
