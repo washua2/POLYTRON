@@ -164,6 +164,11 @@ const onLoadedMetadata = () => {
         start: videoStartTimestamp,
         end: videoStartTimestamp + parseInt(duration),
         style: { background: "#1C64F2" }
+    },{
+        id: 4,
+        start: new Date("2025-12-11 16:00:00").getTime(),
+        end: new Date("2025-12-11 16:00:00").getTime() + parseInt(duration),
+        style: { background: "#1C64F2" }
     }];
     console.log(timeFrame.value);
 };

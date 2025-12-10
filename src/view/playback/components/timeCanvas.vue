@@ -76,6 +76,16 @@ watch(() => props.orderPlay, ()=>{
     rangeIndex.value -= 1
   }
 })
+watch(
+  () => timeParts.value,
+  (val) => {
+    if (!TimeLineDom.value) return;
+    TimeLineDom.value.setTimeParts(val);      // ✅ 关键
+    TimeLineDom.value.setCurrentTime(val[0].start); // 让视口对准片段
+  },
+  { deep: true, immediate: true }
+);
+
 watch(() => props.multipleSpeed, ()=>{
   stopMove(props.multipleSpeed)
   beginMove(props.multipleSpeed)
@@ -89,8 +99,8 @@ watch(() => props.playerState, ()=>{
 })
 nextTick(() => {
   TimeLineDom.value = new TimeLine("canvas1",
-    new Date().getTime(),
-    timeParts.value,
+    timeParts.value[0].start,   // currentTime 先定位到片段附近
+    timeParts.value, 
     true,
     changeCallback,
     nextCallback
