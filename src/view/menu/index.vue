@@ -1,6 +1,6 @@
 <template>
     <div id="menu" class="h-[100vh] ipad:min-h-[100svh] pb-[1.25rem] bg-white flex flex-wrap flex-col justify-between items-start border-r-[0.0625rem] box-menu
-     absolute top-0 left-0 z-[20] transition-[width] duration-300 ease-in-out" :class="isCollapse ? 'w-[16.25rem]' : 'w-[5rem]'
+     absolute top-0 left-0 z-[20] transition-[width] duration-[300ms] ease-in-out" :class="isCollapse ? 'w-[16.25rem]' : 'w-[5rem]'
         ">
         <!-- icon -->
         <div class="w-full">
@@ -21,7 +21,7 @@
                     @click="handlerSelect(item, index)" v-for="(item, index) in menuList" :key="index">
                     <SvgIcon width="1.25rem" height="1.25rem" :color="activeIndex == index&&index==0 ? '#fff' :index==0? '#666D80':''"
                         :icon="activeIndex == index ? item.iconActive : item.icon" />
-                    <div class="justify-start  text-[0.875rem] font-medium font-['Roboto'] whitespace-nowrap transition-[width] duration-300 ease-in-out overflow-hidden absolute left-[3.125rem]"
+                    <div class="justify-start  text-[0.875rem] font-medium font-['Roboto'] whitespace-nowrap transition-[opacity] duration-[300ms] ease-in-out overflow-hidden absolute left-[3.125rem]"
                         :class="isCollapse ? 'opacity-100 max-w-full ' : 'opacity-0 max-w-0'">{{ item.title }}</div>
                 </div>
             </div>
