@@ -1,6 +1,6 @@
 <template>
     <div class="w-[113.375rem] flex items-start">
-        <div class="mt-[4.8125rem] pl-[1.25rem] flex-shrink-0 w-[18.875rem]" v-if="isUploadImage">
+        <div class="mt-[4.8125rem] pl-[1.25rem] flex-shrink-0 " v-if="isUploadImage">
             <SearchPhoto />
         </div>
         <div class="flex-1 min-w-0">
@@ -9,11 +9,9 @@
                 93 Results Found</div>
             <div class=" pl-[1.25rem] h-[37.5rem] fhd:h-[47.8125rem] qhd:h-[47.8125rem] uhd:h-[47.8125rem] overflow-y-auto overflow-hidden scroll"
                 :class="isUploadImage ? 'pr-[1.5rem]' : 'pr-[1.5rem]'">
-                <div class="box " :style="{
-                    gridTemplateColumns: `repeat(auto-fill, minmax(22.1875rem, 1fr)`
-                }">
+                <div class="grid grid-cols-4 ipad:grid-cols-3 gap-[0.75rem] " >
                     <div id="video-hover"
-                        class="w-full h-[15.375rem] rounded-[0.25rem] border-[0.0625rem] border-[#E4E4E7] overflow-hidden relative"
+                        class="card rounded-[0.25rem] border-[0.0625rem] border-[#E4E4E7] overflow-hidden relative"
                         v-for="(item, index) in cameraList" :key="index" @mouseover="handlerMouseover(index)"
                         @mouseleave="handlerMouseleave(index)">
                         <!-- date -->
@@ -100,11 +98,6 @@ onMounted(() => {
 })
 </script>
 <style lang="scss" scoped>
-.box {
-    display: grid;
-    grid-auto-rows: 1fr;
-    gap: 0.75rem;
-}
 
 .box-time {
     display: inline-flex;
@@ -118,5 +111,10 @@ onMounted(() => {
 .box-mask {
     border-radius: 0 0 0.25rem 0.25rem;
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 13.87%, #13161E 92.13%);
+}
+.card {
+  width: 100%;
+  aspect-ratio: 16 / 9; /* 卡片高度随宽度缩放 */
+  background: #ccc;
 }
 </style>

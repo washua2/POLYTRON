@@ -8,11 +8,11 @@
           </div>
           <!-- list -->
           <div
-            class="box-video"
-            :style="{ gridTemplateColumns: 'repeat(auto-fill, minmax(27rem, 1fr))' }"
+            class="grid grid-cols-4 ipad:grid-cols-3 gap-[0.75rem]"
+            
           >
             <div
-              class="w-[27rem] h-[15.5rem] rounded-[0.5rem] bg-[#D9D9D9] overflow-hidden relative"
+              class="card rounded-[0.5rem] bg-[#D9D9D9] overflow-hidden relative"
               v-for="(v, i) in item.list"
               :key="i"
             >
@@ -65,9 +65,9 @@ const videoGroups = [
 ];
 </script>
 <style lang="scss" scoped>
-.box-video {
-  display: grid;
-  grid-auto-rows: 1fr;
-  gap: 0.75rem;
+.card {
+  width: 100%;
+  aspect-ratio: 16 / 9; /* 卡片高度随宽度缩放 */
+  background: #ccc;
 }
 </style>
