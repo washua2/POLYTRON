@@ -1,7 +1,7 @@
 <template>
   <div
     class="w-[113.375rem]
-           h-[41.5625rem] ipad:h-[62.5rem] fhd:h-[52.1875rem] qhd:h-[38.125rem] uhd:h-[38.125rem]
+           h-[43.4375rem] ipad:h-[62.5rem] fhd:h-[52.1875rem] qhd:h-[38.125rem] uhd:h-[38.125rem]
            pr-[0.625rem] overflow-y-auto overflow-hidden scroll"
   >
     <!-- ✅ iPad 3列 / PC 4列 -->

@@ -20,7 +20,7 @@
       <!-- scroll area -->
       <div
         class="pl-[1.25rem]
-               h-[37.5rem] ipad:h-[60rem] fhd:h-[47.8125rem] qhd:h-[47.8125rem] uhd:h-[47.8125rem]
+               h-[40rem] ipad:h-[60rem] fhd:h-[47.8125rem] qhd:h-[47.8125rem] uhd:h-[47.8125rem]
                overflow-y-auto overflow-hidden scroll-thinck pr-[1.5rem]"
       >
         <!-- ✅ grid：PC 4 列 / iPad 3 列 -->
