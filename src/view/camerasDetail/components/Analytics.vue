@@ -3,36 +3,38 @@
         <div class="pl-[1.875rem]">
             <div class="w-full h-[0.0625rem]  bg-[rgba(225,228,234,1)] mt-[1.9375rem]"></div>
         </div>
-        
-        <div class="flex items-center justify-between pl-[1.875rem] mt-[1.375rem]">
+
+        <div class="w-full flex items-center justify-between pl-[1.875rem] mt-[1.375rem]">
             <div class="justify-start text-[#09090B] text-[1.25rem] font-['medium'] leading-6 tracking-tight">People
                 Counting</div>
             <div class="flex items-center gap-[0.75rem]">
                 <div class="relative">
 
-                <div
-                    class="w-[5.9375rem] h-[3.25rem] bg-white rounded-lg border-[0.0625rem] border-[#E1E4EA] flex items-center justify-center cursor-pointer"
-                     @click="isShowDateModel=!isShowDateModel">
-                    <div class="justify-start text-[#09090B] text-[0.875rem] font-normal font-['Roboto'] leading-5">Time
-                        Filter</div>
-                    
-                </div>
+                    <div class="w-[5.9375rem] h-[3.25rem] bg-white rounded-lg border-[0.0625rem] border-[#E1E4EA] flex items-center justify-center cursor-pointer"
+                        @click="isShowDateModel = !isShowDateModel">
+                        <div class="justify-start text-[#09090B] text-[0.875rem] font-normal font-['Roboto'] leading-5">
+                            Time
+                            Filter</div>
+
+                    </div>
                     <div class=" absolute top-[-22.5rem] left-[-9.375rem] z-[12]" v-show="isShowDateModel">
                         <DateModel @handlerDateClose="isShowDateModel = false" @apply="handlerDateApply" />
                     </div>
                 </div>
-                <div
-                    class="w-[7.5625rem] h-[3.25rem] rounded-[0.5rem] flex items-center justify-center gap-[0.75rem] cursor-pointer"
-                    :class="isEditLines?'bg-[#1C64F2]':'bg-[#fff] border-[0.0625rem] border-[#E1E4EA]'"
-                     @click="isEditLines=!isEditLines">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="1.25rem" height="1.125rem" viewBox="0 0 20 20" fill="none" >
-                        <circle cx="16.8415" cy="3.15789" r="2.50789" :stroke="isEditLines?'white':'#000' " stroke-width="1.3" />
-                        <circle cx="3.15789" cy="16.842" r="2.50789" :stroke="isEditLines?'white':'#000' " stroke-width="1.3" />
-                        <line x1="15.1979" y1="4.67007" x2="4.67159" y2="15.1964" :stroke="isEditLines?'white':'#000' " stroke-width="1.3" />
+                <div class="w-[7.5625rem] h-[3.25rem] rounded-[0.5rem] flex items-center justify-center gap-[0.75rem] cursor-pointer"
+                    :class="isEditLines ? 'bg-[#1C64F2]' : 'bg-[#fff] border-[0.0625rem] border-[#E1E4EA]'"
+                    @click="isEditLines = !isEditLines">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1.25rem" height="1.125rem" viewBox="0 0 20 20"
+                        fill="none">
+                        <circle cx="16.8415" cy="3.15789" r="2.50789" :stroke="isEditLines ? 'white' : '#000'"
+                            stroke-width="1.3" />
+                        <circle cx="3.15789" cy="16.842" r="2.50789" :stroke="isEditLines ? 'white' : '#000'"
+                            stroke-width="1.3" />
+                        <line x1="15.1979" y1="4.67007" x2="4.67159" y2="15.1964" :stroke="isEditLines ? 'white' : '#000'"
+                            stroke-width="1.3" />
                     </svg>
-                    <div class="justify-start text-white text-[0.875rem] font-normal font-['Roboto'] leading-5" 
-                    :class="isEditLines?'text-white':'text-[#000]'"
-                    >Edit
+                    <div class="justify-start text-white text-[0.875rem] font-normal font-['Roboto'] leading-5"
+                        :class="isEditLines ? 'text-white' : 'text-[#000]'">Edit
                         Lines </div>
                 </div>
                 <div
@@ -46,7 +48,7 @@
             </div>
         </div>
         <!-- echart -->
-        <div class="flex items-center gap-[3.75rem] pl-[1.875rem] mt-[1.75rem]">
+        <div class="flex items-center gap-[3.75rem] pl-[1.875rem] mt-[1.75rem]" v-if="!isEmpty">
             <div class="w-[53.9375rem] h-[11.25rem]">
                 <div
                     class="justify-start text-[#52525B] text-[1.125rem] font-medium font-['Roboto'] leading-6 tracking-tight">
@@ -63,7 +65,21 @@
 
                 </div>
             </div>
-
+        </div>
+        <!-- empty -->
+        <div class="w-full pl-[1.875rem] flex items-center justify-center flex-col gap-[1.1875rem] mt-[0.25rem]" v-else>
+            <svg xmlns="http://www.w3.org/2000/svg" width="116" height="116" viewBox="0 0 116 116" fill="none">
+                <path
+                    d="M105.935 109H11.4748C9.01058 109 7 106.997 7 104.529V10.0539C7 8.36814 8.37308 7 10.0649 7C11.7567 7 13.1298 8.36814 13.1298 10.0539V102.892H105.935C107.627 102.892 109 104.26 109 105.946C109 107.632 107.627 109 105.935 109Z"
+                    fill="#09090B" stroke="white" stroke-width="3" />
+                <path
+                    d="M23.9806 61.2531H30.1903V94H23.9806V61.2531ZM45.9256 51.3773H52.1353V94H45.9256V51.3773ZM67.8582 61.2531H74.0679V94H67.8582V61.2531ZM89.8032 45.3785H96.0129V94H89.8032V45.3785ZM24.7134 52.476L21 47.3739L48.186 27.5591L71.2611 41.994L93.9637 23L98 27.8495L71.7952 49.7734L48.4592 35.1617L24.7134 52.476Z"
+                    fill="#09090B" stroke="white" stroke-width="3" />
+                <path d="M88 20.3545L102 20L98.8417 37" fill="#09090B" />
+            </svg>
+            <div
+                class="text-center justify-start text-[#52525B] text-[1.25rem] font-['light']  leading-6 tracking-tight">
+                No analytical data</div>
         </div>
     </div>
 </template>
@@ -72,8 +88,9 @@ import { onMounted, ref } from 'vue'
 import { renderChart } from '@/utils/echarts/InTrends'
 import { renderOutChart } from '@/utils/echarts/outTrends'
 import DateModel from '@/components/DateModel.vue'
+const isEmpty = ref(false)
 const isShowDateModel = ref(false)
-const isEditLines=ref(false)
+const isEditLines = ref(false)
 const handlerDateApply = () => {
     isShowDateModel.value = false
 }
