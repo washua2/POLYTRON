@@ -157,9 +157,9 @@
                 </button>
 
                 <!-- success -->
-                <p v-if="successMsg" class="text-center text-[0.75rem] text-green-600 font-['light'] mt-2">
+                <!-- <p v-if="successMsg" class="text-center text-[0.75rem] text-green-600 font-['light'] mt-2">
                     {{ successMsg }}
-                </p>
+                </p> -->
             </form>
         </div>
     </div>

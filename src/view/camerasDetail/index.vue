@@ -113,6 +113,9 @@
             <div v-if="activeMode == 2 || activeMode == 3 || activeMode == 4">
                 <People :activeMode="activeMode" />
             </div>
+             <div v-if="activeMode == 5">
+                <Analytics :activeMode="activeMode" />
+            </div>
             <!-- ------------------------------------------------------------- -->
         </div>
         <!-- Back to Top：距离底部一定距离才显示 -->
@@ -121,7 +124,7 @@
     appear
   >
     <div
-      v-show="showBackTop"
+      v-show="showBackTop&&activeMode!==5"
       class="fixed bottom-[2.4375rem] left-1/2 ml-[-5rem] z-[99] flex justify-center"
     >
       <div
@@ -142,6 +145,7 @@ import VideoList from "@/components/videoList.vue";
 import MotionEmpty from "./components/MotionEmpty.vue";
 import ClipsModel from "./components/ClipsModel.vue";
 import People from "./components/People.vue";
+import Analytics from "./components/Analytics.vue";
 import DateModel from "@/components/DateModel.vue";
 import { ref, onMounted, onBeforeUnmount, inject, computed } from "vue";
 import { useRouter } from "vue-router";
